@@ -13,6 +13,7 @@ Official repo for the paper "**Multi-view Pyramid Transformer: Look Coarser to S
 
 **[Mar 2026]** MVP optionally supports [Flash Attention 4](https://github.com/Dao-AILab/flash-attention) for faster attention computation. If `flash-attn-4` is installed, it will be used automatically; otherwise the code falls back to the standard `F.scaled_dot_product_attention`.
 
+ 
 | Views | H100 + FA3 (s) | B200 + FA4 (s) | Speedup |
 |------:|---------------:|---------------:|--------:|
 |    16 |           0.09 |           0.05 |   1.8×  |
@@ -21,8 +22,8 @@ Official repo for the paper "**Multi-view Pyramid Transformer: Look Coarser to S
 |   128 |           0.77 |           0.43 |   1.8×  |
 |   192 |           1.23 |           0.70 |   1.8×  |
 |   256 |           1.84 |           1.08 |   1.7×  |
-
-*Reconstruction time (seconds). H100 numbers from the original paper.*
+ 
+*Reconstruction time (seconds) at 960x540. H100 numbers from the original paper.*
 
 **[Mar 2026]** We've updated the codebase with a CUDA implementation of Opacity with SH coefficients, reducing both training time and memory consumption. Kudos to [Hyeongbhin-Cho](https://github.com/Hyeongbhin-Cho) for the contribution. See details in the original [repo](https://github.com/Hyeongbhin-Cho/gsplat_vlab).
 
